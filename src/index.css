@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&family=Poppins:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #c9a227;
+  --color-deep-black: #0f0f0f;
+  --color-dark-gray: #1c1c1c;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  --font-accent: "Poppins", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-deep-black text-white selection:bg-gold/30 selection:text-gold;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@utility glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+@utility gold-gradient {
+  @apply bg-gradient-to-br from-gold via-[#e5c158] to-[#9e7b1a];
+}
+
+@utility text-gold-gradient {
+  @apply bg-clip-text text-transparent gold-gradient;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-deep-black;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-gray rounded-full border-2 border-deep-black hover:bg-gold/50 transition-colors;
+}
+
+html {
+  scroll-behavior: smooth;
+}
